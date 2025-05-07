@@ -2,80 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Theano’s Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theono's Path</title>
   <style>
     body {
       background-color: #000;
-      color: #ccc;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     input[type="number"] {
       padding: 10px;
       font-size: 16px;
       width: 100px;
-      background-color: #222;
-      color: #ccc;
-      border: 1px solid #555;
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
       border-radius: 5px;
       -moz-appearance: textfield;
-
+      -webkit-appearance: none;
     }
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-    
     button {
       padding: 10px 20px;
       font-size: 16px;
-      margin-left: 10px;
-      background-color: #444;
-      color: #ccc;
-      border: none;
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
       border-radius: 5px;
       cursor: pointer;
+      margin-left: 10px;
     }
-    #popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      font-size: 24px;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
+    button:hover {
+      background-color: #0f0;
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <h1>1, 1, 2, 3, 5, 8, ?</h1>
-  <input type="number" id="answerInput" />
+  <h1>Theono's Path</h1>
+  <p>What comes next in the sequence? 1, 1, 2, 3, 5, 8, ?</p>
+  <input type="number" id="userInput" />
   <button onclick="checkAnswer()">Enter</button>
-
-  <div id="popup" onclick="hidePopup()">Sorry, wrong answer. Try again.</div>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById('answerInput').value.trim();
+      const input = document.getElementById("userInput").value;
       if (input === "13") {
         window.location.href = "congrats.html";
       } else {
-        document.getElementById('popup').style.display = "flex";
+        alert("Sorry, wrong answer. Try again.");
       }
-    }
-
-    function hidePopup() {
-      document.getElementById('popup').style.display = "none";
     }
   </script>
 </body>
