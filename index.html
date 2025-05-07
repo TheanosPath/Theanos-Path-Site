@@ -2,70 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Theono’s Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Theano’s Path</title>
   <style>
     body {
-      background-color: black;
-      color: gray;
-      font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      background-color: #000;
+      color: #ccc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
     }
-    input {
-      margin-top: 20px;
+    input[type="number"] {
       padding: 10px;
-      font-size: 1em;
+      font-size: 16px;
+      width: 100px;
       background-color: #222;
-      color: white;
+      color: #ccc;
       border: 1px solid #555;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: #444;
+      color: #ccc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
     #popup {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.9);
-      color: white;
-      display: none;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      font-size: 24px;
       justify-content: center;
       align-items: center;
-      font-size: 1.5em;
-      z-index: 10;
+      z-index: 999;
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>1, 1, 2, 3, 5, 8, 13, 21, 34, ?</h1>
-    <input type="text" id="answer" placeholder="Enter the next number" />
-  </div>
+  <h1>1, 1, 2, 3, 5, 8, ?</h1>
+  <input type="number" id="answerInput" />
+  <button onclick="checkAnswer()">Enter</button>
 
-  <div id="popup">Sorry, wrong answer, try again.</div>
+  <div id="popup" onclick="hidePopup()">Sorry, wrong answer. Try again.</div>
 
   <script>
-    const input = document.getElementById('answer');
-    const popup = document.getElementById('popup');
-
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        const answer = input.value.trim();
-        if (answer === '55') {
-          window.location.href = 'congrats.html';
-        } else {
-          popup.style.display = 'flex';
-        }
+    function checkAnswer() {
+      const input = document.getElementById('answerInput').value.trim();
+      if (input === "13") {
+        window.location.href = "congrats.html";
+      } else {
+        document.getElementById('popup').style.display = "flex";
       }
-    });
+    }
 
-    document.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
+    function hidePopup() {
+      document.getElementById('popup').style.display = "none";
+    }
   </script>
 </body>
 </html>
