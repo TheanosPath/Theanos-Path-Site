@@ -1,65 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Theano’s Path</title>
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #e0e0e0;
-      font-family: 'Georgia', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 40px;
-      font-size: 1.5em;
-      letter-spacing: 1px;
-    }
-    input, button {
-      padding: 10px;
-      font-size: 1em;
-      margin-top: 10px;
-      border: none;
-      border-radius: 4px;
-    }
-    input {
-      width: 80px;
-      text-align: center;
-    }
-    button {
-      cursor: pointer;
-      background-color: #444;
-      color: white;
-      margin-left: 10px;
-    }
-    #error {
-      color: #ff6666;
-      margin-top: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theono's Path</title>
+    <style>
+        body {
+            background-color: black; /* Sets the background color to black */
+            color: gray; /* Sets the text color to gray */
+            font-family: Arial, sans-serif; /* Changes the font to Arial */
+            text-align: center; /* Centers the text */
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ensures the body takes up the full height of the screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-  <h1>1, 1, 2, 3, 5, 8, 13, ?</h1>
-  <div>
-    <input type="text" id="answer" placeholder="Answer">
-    <button onclick="checkAnswer()">Enter</button>
-  </div>
-  <div id="error"></div>
-
-  <script>
-    function checkAnswer() {
-      const input = document.getElementById('answer').value.trim();
-      if (input === '21') {
-        window.location.href = "nextpage.html"; // <-- replace this with your actual next URL
-      } else {
-        document.getElementById('error').textContent = "That is not the correct number.";
-      }
-    }
-  </script>
+    <div>
+        <h1>Welcome to Theono's Path</h1>
+        <p>Your first clue will appear here soon...</p>
+    </div>
 </body>
 </html>
