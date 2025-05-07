@@ -2,62 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Theono's Path</title>
   <style>
     body {
       background-color: #000;
       color: #0f0;
       font-family: 'Courier New', Courier, monospace;
-      height: 100vh;
-      margin: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
     }
+
     input[type="number"] {
       padding: 10px;
       font-size: 16px;
-      width: 100px;
-      background-color: #000;
-      color: #0f0;
-      border: 1px solid #0f0;
+      width: 250px;
+      background-color: #ddd;
+      color: #000;
+      border: 1px solid #999;
       border-radius: 5px;
-      -moz-appearance: textfield;
-      -webkit-appearance: none;
     }
+
     button {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #000;
-      color: #0f0;
-      border: 1px solid #0f0;
+      margin-top: 10px;
+      background-color: #ccc;
+      color: #000;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-left: 10px;
     }
+
     button:hover {
-      background-color: #0f0;
-      color: #000;
+      background-color: #bbb;
     }
   </style>
 </head>
 <body>
-  <h1>Theono's Path</h1>
-  <p>What comes next in the sequence? 1, 1, 2, 3, 5, 8, ?</p>
-  <input type="number" id="userInput" />
-  <button onclick="checkAnswer()">Enter</button>
+
+  <form onsubmit="checkAnswer(event)">
+    <input type="number" id="answer" placeholder="What comes next in the sequence?" required />
+    <br />
+    <button type="submit">Enter</button>
+  </form>
 
   <script>
-    function checkAnswer() {
-      const input = document.getElementById("userInput").value;
-      if (input === "13") {
+    function checkAnswer(event) {
+      event.preventDefault();
+      const answer = document.getElementById("answer").value;
+      if (answer === "13") {
         window.location.href = "congrats.html";
       } else {
-        alert("Sorry, wrong answer. Try again.");
+        alert("Sorry, wrong answer. Try again");
       }
     }
   </script>
+
 </body>
 </html>
