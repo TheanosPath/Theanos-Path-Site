@@ -1,38 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theono's Path</title>
-    <style>
-        body {
-            background-color: black; /* Sets the background color to black */
-            color: gray; /* Sets the text color to gray */
-            font-family: Arial, sans-serif; /* Changes the font to Arial */
-            text-align: center; /* Centers the text */
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Ensures the body takes up the full height of the screen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin: 0;
-            padding: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theono’s Path</title>
+  <style>
+    body {
+      background-color: black;
+      color: gray;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    input {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 1em;
+      background-color: #222;
+      color: white;
+      border: 1px solid #555;
+    }
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      z-index: 10;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <h1>Welcome to Theono's Path</h1>
-        <p>Your first clue will appear here soon...</p>
-    </div>
+  <div>
+    <h1>1, 1, 2, 3, 5, 8, 13, 21, 34, ?</h1>
+    <input type="text" id="answer" placeholder="Enter the next number" />
+  </div>
+
+  <div id="popup">Sorry, wrong answer, try again.</div>
+
+  <script>
+    const input = document.getElementById('answer');
+    const popup = document.getElementById('popup');
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        const answer = input.value.trim();
+        if (answer === '55') {
+          window.location.href = 'congrats.html';
+        } else {
+          popup.style.display = 'flex';
+        }
+      }
+    });
+
+    document.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
