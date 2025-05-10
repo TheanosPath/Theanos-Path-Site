@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theono's Path</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <p class="sequence">
+      1, 1, 2, 3, 5, 8, 13, <span class="question-mark">?</span>
+    </p>
+    <form onsubmit="checkAnswer(event)">
+      <input
+        type="number"
+        id="answer"
+        placeholder="What comes next in the sequence?"
+        autocomplete="off"
+        required
+      />
+      <br />
+      <button type="submit">Enter</button>
+    </form>
+
+    <div id="customModal" class="modal">
+      <div class="modal-content">
+        <p>Sorry, wrong answer. Try again.</p>
+        <button id="closeModal">OK</button>
+      </div>
+    </div>
+
+    <script>
+      function checkAnswer(event) {
+        event.preventDefault();
+        const answer = document.getElementById("answer").value;
+        if (answer === "21") {
+          window.location.href = "register.html";
+        } else {
+          document.getElementById("customModal").style.display = "block";
+        }
+      }
+
+      document
+        .getElementById("closeModal")
+        .addEventListener("click", function () {
+          document.getElementById("customModal").style.display = "none";
+        });
+    </script>
+  </body>
+</html>

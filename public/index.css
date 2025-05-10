@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+background-color: #1a1a1a; /* Dark gray background */
+color: #fff; /* White text */
+font-family: 'Courier New', Courier, monospace;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+flex-direction: column;
+padding: top 100px;
+}
+
+.sequence {
+font-size: 67px;
+color: #00c7ff; /* Electric blue for contrast */
+margin-top: -40px; /* adjust this value to raise the numbers */
+margin-bottom: 60px; /* this keeps a nice space under the numbers */
+}
+
+input[type="number"] {
+padding: 15px 15px 18px 18px;
+font-size: 22px;
+font-weight: bold; /* user-entered text*/
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 8px;
+margin: 10px 0;
+transition: all 0.3s ease;
+text-align: center;
+width: 290px; /* This will now ONLY affect the input */
+}
+
+input[type="number"]::placeholder {
+font-weight: normal;
+font-style: italic;
+font-size: 16px;
+color: #cccccc; /* Light gray for better visibility */
+}
+
+input:focus {
+outline: none;
+box-shadow: none;
+}
+
+
+
+input[type="number"]:focus, button:hover {
+background-color: #00c7ff; /* Blue highlight on focus and hover */
+color: #1a1a1a; /* Dark text on focus/hover */
+}
+
+/* Hide number input spinner arrows in most browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type="number"] {
+appearance: textfield; /* For Firefox */
+}
+
+
+button {
+padding: 15px 25px;
+font-size: 16px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 8px;
+margin: 10px 0;
+transition: all 0.3s ease;
+cursor: pointer;
+}
+
+form {
+text-align: center;
+}
+
+
+.modal {
+display: none; /* Hidden by default */
+position: fixed;
+z-index: 999; /* On top */
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+.modal-content {
+background-color: #1a1a1a;
+color: #fff;
+margin: 21% auto;
+padding: 20px 30px;
+border-radius: 10px;
+width: fit-content;
+text-align: center;
+box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.modal-content button {
+margin-top: 15px;
+padding: 10px 20px;
+background-color: #00c7ff;
+color: #1a1a1a;
+border: none;
+border-radius: 6px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.question-mark {
+  color: #f7f3f3;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 77, 77, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(255, 77, 77, 1);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.7);
+  }
+}
+
+
