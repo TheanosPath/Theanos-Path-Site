@@ -2,7 +2,12 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+// Input validation helper
+const validateInput = (name, email) => {
+  return name && email && email.includes('@');
+};
 
 // Middleware to handle static files and form data
 app.use(express.static(path.join(__dirname, "public")));
@@ -17,6 +22,10 @@ app.get("/", (req, res) => {
 // ✅ THIS IS THE SERVER LOGIC TO HANDLE FORM SUBMISSIONS
 app.post("/submit", (req, res) => {
   const { name, email } = req.body;
+  
+  if (!validateInput(name, email)) {
+    return res.status(400).send('Invalid input');
+  }
   const newEntry = {
     id: Date.now(),
     name,
@@ -47,4 +56,8 @@ app.post("/submit", (req, res) => {
   submissions.push(newEntry);
   fs.writeFileSync(filePath, JSON.stringify(submissions, null, 2));
   res.redirect("/thankyou.html");
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
