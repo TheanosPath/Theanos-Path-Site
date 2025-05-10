@@ -1,29 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Thank You</title>
-  <link rel="stylesheet" href="register.css">
-  <style>
-    .thankyou-container {
-      text-align: center;
-      margin-top: 150px;
-    }
-    .thankyou-container h1 {
-      color: #00c7ff;
-      font-size: 32px;
-    }
-    .thankyou-container p {
-      color: #ccc;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body class="register-body">
-  <div class="thankyou-container">
-    <h1>You're in.</h1>
-    <p>Theano’s Path has many forks. Only one leads forward.<br>Watch your step.</p>
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thank You</title>
+        <style>
+            body {
+                background-color: #0f0f0f;
+                color: #f0f0f0;
+                font-family: "Georgia", serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .container {
+                text-align: center;
+                padding: 20px;
+                max-width: 500px;
+                color: #66ccff;
+            }
+
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 0.5em;
+            }
+
+            p {
+                font-size: 1.2em;
+                margin-bottom: 2em;
+                color: #cccccc;
+            }
+
+            .proceed-button {
+                background-color: #1a1a1a;
+                color: #ffffff;
+                border: 2px solid #888;
+                padding: 12px 24px;
+                font-size: 1em;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .proceed-button:hover {
+                background-color: #333;
+                color: #00ffcc;
+                border-color: #00ffcc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>You're In!</h1>
+            <p>
+                Theano’s path has many forks. Only one leads forward. Watch your
+                step.
+            </p>
+
+            <button
+                class="proceed-button"
+                onclick="window.location.href = '/next-clue';"
+            >
+                Proceed down the path
+            </button>
+        </div>
+    </body>
 </html>
